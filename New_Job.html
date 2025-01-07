@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案件委託刊登 - LanceDom</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="./JavaScript/script.js"></script>
+</head>
+
+
+<!-- 案件頁面 -->
+
+<body>
+    <div>
+        <!-- header -->
+        <div class="nav">
+            <!-- LOGO -->
+            <div class="logo">
+                <a href="">
+                    <img class="LanceDom" src="../img/Icon/LOGO.png" alt="logo"></a>
+                <a href="">LanceDom</a>
+            </div>
+            <!-- navbar -->
+            <div class="navbar">
+                <a href="">Home</a>
+                <a href="">Service</a>
+                <a href="">Feature</a>
+                <a href="">Product</a>
+                <a href="">Testimonail </a>
+                <a href="">FAQ </a>
+            </div>
+            <!-- member -->
+            <div class="member">
+                <a href="">Login</a>
+                <a class="sign" href="">Sign up</a>
+            </div>
+        </div>
+
+        <!-- Breadcrumb 路徑 -->
+        <div class="breadcrumb">
+            <img src="./img/Icon/Start.png" alt="">
+            <a href="#">首頁</a><img src="./img/Icon/Forward.png" alt="">
+            <a href="#">我是業主</a><img src="./img/Icon/Forward.png" alt="">
+            <span>委託刊登</span>
+        </div>
+
+        <!-- container -->
+        <div class="container">
+            <div class="mainContent">
+                <!-- 表單區塊 -->
+                <div class="form-section">
+                    <form action="#" method="post">
+                        <!-- 第一排 -->
+                        <div class="form-row">
+                            <label for="title">案件需求*</label>
+                            <input type="text" id="title" name="title" placeholder="輸入您的委託標題" required>
+                        </div>
+
+                        <!-- 第二排 -->
+                        <div class="form-row two-columns">
+                            <div>
+                                <label for="contactName">聯絡人名稱*</label>
+                                <input type="text" id="contactName" name="contactName" placeholder="輸入聯絡人名稱" required>
+                            </div>
+                            <div>
+                                <label for="location">執行地點*</label>
+                                <select id="location" name="location" required>
+                                    <option value="" disabled selected>選擇地點</option>
+                                    <option value="可遠端工作">可遠端工作</option>
+                                    <option value="台北市">台北市</option>
+                                    <option value="新北市">新北市</option>
+                                    <option value="桃園市">桃園市</option>
+                                    <option value="台中市">台中市</option>
+                                    <option value="台南市">台南市</option>
+                                    <option value="高雄市">高雄市</option>
+                                    <option value="基隆市">基隆市</option>
+                                    <option value="新竹市">新竹市</option>
+                                    <option value="嘉義市">嘉義市</option>
+                                    <option value="新竹縣">新竹縣</option>
+                                    <option value="苗栗縣">苗栗縣</option>
+                                    <option value="彰化縣">彰化縣</option>
+                                    <option value="南投縣">南投縣</option>
+                                    <option value="雲林縣">雲林縣</option>
+                                    <option value="嘉義縣">嘉義縣</option>
+                                    <option value="屏東縣">屏東縣</option>
+                                    <option value="宜蘭縣">宜蘭縣</option>
+                                    <option value="花蓮縣">花蓮縣</option>
+                                    <option value="台東縣">台東縣</option>
+                                    <option value="澎湖縣">澎湖縣</option>
+                                    <option value="金門縣">金門縣</option>
+                                    <option value="連江縣">連江縣</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <!-- 第三排 -->
+                        <div class="form-row two-columns">
+                            <div>
+                                <label for="budget">預算金額*</label>
+                                <select id="budget" name="budget" required>
+                                    <option value="" disabled selected>選擇預算</option>
+                                    <option value="10K以下">10K以下</option>
+                                    <option value="10K-30K">10K-30K</option>
+                                    <option value="30K以上">30K以上</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="phone">聯絡人電話*</label>
+                                <input type="tel" id="phone" name="phone" placeholder="輸入聯絡人電話" required>
+                            </div>
+                        </div>
+
+                        <!-- 第四排 -->
+                        <div class="form-row">
+                            <label for="email">聯絡人Email*</label>
+                            <input type="email" id="email" name="email" placeholder="輸入聯絡人Email" required>
+                        </div>
+
+                        <!-- 第五排 -->
+                        <div>
+                            <label for="details">需求詳情*
+                                <span style="font-size: 0.8rem; color: gray; margin-left: 8px;">填寫越完整，接案者更了解您的需求</span>
+                            </label>
+                            <textarea id="details" name="details" rows="10" placeholder="專案期限：&#10;用於哪個行業：&#10;其他細節說明："
+                                required></textarea>
+                        </div>
+
+                        <!-- 提交按鈕 -->
+                        <div class="form-row submit-row">
+                            <button type="submit" class="submit-btn">送出委託</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="space"></div>
+        </div>
+
+        <!-- 彈出視窗 -->
+        <div id="successAlert" class="modal hidden">
+            <div class="modal-content">
+                <div class="checkmark">✔</div>
+                <p>已成功送出委託！請等待審核！</p>
+                <button id="closeAlert">確認</button>
+            </div>
+        </div>
+
+        <!-- 遮罩層 -->
+        <div id="overlay" class="hidden"></div>
+
+
+        <!-- 懸浮按鈕區域 -->
+        <div class="floating-buttons">
+            <button class="floating-btn" id="profile-btn" title="個人資料">
+                <img src="./img/Icon/Male User.png" alt="個人資料">
+            </button>
+            <button class="floating-btn" id="notification-btn" title="通知">
+                <img src="./img/Icon/Alarm.png" alt="通知">
+            </button>
+            <button class="floating-btn" id="chat-btn" title="聊天">
+                <img src="./img/Icon/Chat Message.png" alt="聊天">
+            </button>
+            <button class="floating-btn" id="scroll-top-btn" title="返回頂部">
+                <img src="./img/Icon/Upward Arrow.png" alt="返回頂部">
+            </button>
+        </div>
+
+
+        <!-- footer -->
+        <div class="footer">
+            <!-- LOGO&icons -->
+            <div class="icons">
+                <div class="logo">
+                    <a href="">
+                        <img class="LanceDom" src="../img/Icon/LOGO.png" alt="logo"></a>
+                    <a href="">LanceDom</a>
+                </div>
+                <a href="">
+                    <img src="../img/Icon/LINE-2.png" alt="LINE">
+                </a>
+                <a href=""><img src="../img/Icon/Facebook-2.png" alt="Facebook"></a>
+                <a href=""><img src="../img/Icon/Instagram-2.png" alt="Instagram"></a>
+            </div>
+            <div style="flex: 4;"></div>
+            <!-- copyright -->
+            <div class="copyright">
+                <div>
+                    <a href="">網站公告</a>
+                    <a href="">關於我們</a>
+                    <a href="">會員條款</a>
+                </div>
+                <div>Copyright © 2024 LanceDom All rights reserved.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- icon 的 script -->
+    <!-- https://ionic.io/ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
